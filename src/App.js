@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+// TailwindCSS file
+import "./styles/main.css";
 
-function App() {
+// Components
+import AboutMe from "./components/info/about"; // AboutMe card
+import Skills from "./components/skills/skills"; // Skills card
+import Blog from "./components/blog/blog"; // Blog card
+import Hobbies from "./components/hobbies/hobbies"; // Hobbies card
+import Experience from "./components/experience/exp"; // Experience card
+import Projects from "./components/projects/projects"; // Projects card
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="grid gap-6 md:grid-flow-row md:grid-cols-3">
+      <div className="md:col-span-3">
+        <AboutMe />
+      </div>
+      <div className="md:col-span-1">
+        <Skills />
+      </div>
+      <div className="md:col-span-2 md:row-span-2">
+        <Blog />
+      </div>
+      <div className="md:col-span-1 md:row-span-2">
+        <Hobbies />
+      </div>
+      <div className="md:col-span-2">
+        <Experience />
+      </div>
+      <div className="md:col-span-3">
+        <Projects />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
